@@ -1,11 +1,12 @@
+
 class Solution:
     # https://leetcode.com/problems/valid-parentheses/
     def isValid(self, s: str) -> bool:
         d = dict()
         stack = list()
-        d['}'] = '{'
-        d[']'] = '['
-        d[')'] = '('
+        d["}"] = "{"
+        d["]"] = "["
+        d[")"] = "("
         for char in s:
             if char in d.values():
                 stack.append(char)
@@ -80,6 +81,7 @@ class Solution:
         backtrack(0, 0)
         return res
 
+    # https://leetcode.com/problems/daily-temperatures/
     def dailyTemperatures(self, temperatures: list[int]) -> list[int]:
         to_return = [0] * len(temperatures)
         stack = list()
@@ -110,6 +112,7 @@ class Solution:
                 if t1 < t2:
                     stack.append(p2)
         return len(stack)
+
     # https://leetcode.com/problems/largest-rectangle-in-histogram/
     def largestRectangleArea(self, heights: list[int]) -> int:
         pass
